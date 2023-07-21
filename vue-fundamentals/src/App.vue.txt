@@ -1,0 +1,125 @@
+<script setup>
+import {ref} from 'vue'
+const dataMurid =[
+  { nama: 'fawwaz', kelas :"rpl", umur: 17, lokasi: 'bandung'},
+  { nama: 'fawwaz', kelas :"rpl", umur: 17, lokasi: 'bandung'},
+  { nama: 'fawwaz', kelas :"rpl", umur: 17, lokasi: 'bandung'},
+  { nama: 'fawwaz', kelas :"rpl", umur: 17, lokasi: 'bandung'},
+  { nama: 'fawwaz', kelas :"rpl", umur: 17, lokasi: 'bandung'},
+]
+
+const judul =[`nama` , `kelas` , `umur` , `lokasi`]
+
+const nama = ("masukan nama")
+const umur = ("masukan umur")
+const kelas = ("masukan kelas")
+const link = "https://www.youtube.com/"
+
+
+</script>
+<template>
+  <p>BIODATA DIRI</p> <br>
+<p>NAMA : <span v-html="nama" style="color:red"></span></p> <br>
+<p>UMUR : <span v-html="umur" style="color:red"></span></p> <br>
+<p>KELAS : <span v-html="kelas" style="color:red"></span></p> <br>
+<button> 
+<a v-bind:href="link">youtube </a>
+</button>
+<p>latihan 1</p>
+
+<table border="1">
+  <tr>
+    <th v-for="judul in judul">{{ judul }}</th>
+  </tr>
+  <tr v-for="murid in dataMurid">
+    <th>{{ murid.nama }}</th>
+    <th>{{ murid.kelas }}</th>
+    <th>{{ murid.umur }}</th>
+    <th>{{ murid.lokasi }}</th>
+  </tr>
+</table>
+
+<p>{{  }}</p>
+  <div id = "app">
+    <h1>{{ msg }}</h1>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+<template>
+  <div>
+    <h1>FORMULIR KONRAK</h1>
+    <form @submit.prevent="submitForm">
+      <label for="name">Nama:</label>
+      <input class="{'is-invalid': isInvalidUserNama }"  type="text" name= "name" v-model="kontak.nama" required>
+      <div v-if="isInvalidNama" class="error-message">Username harus di isi
+      </div>
+      <br><br>
+      <label for="email">Email:</label>
+      <input class="{ 'is-invalid': isInvalidEmail }" type="email" name="email" v-model="kontak.email">
+      <div v-if="isInvalidEmail" class="error-message"> email harus terdiri dari 8 karakter atau lebih.</div>
+      <br>
+      <button type="submit">kirim</button>
+    </form>
+    <br>
+    <div v-if="showResult">
+      nama : {{ nama }} <br>
+      email : {{ email }}
+    </div>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  name: 'Mycomponent',
+  data() {
+    return {
+      kontak :{
+        nama: ' ',
+        email: ' ',
+      },
+      showResult: ref(false),
+      nama: ref(''),
+      email: ref(''),
+    };
+  },
+    computed: {
+    isInvalidNama() {
+      return this.kontak.usernama.length< 6;
+    },
+    isInvalidEmail() {
+      return this.kontak.useremail.length< 8;
+    }
+  },
+  methods: {
+    submitForm() {
+      this.nama = this.kontak.nama;
+      this.email = this.kontak.email;
+      this.showResult = true;
+      this.isInvalidNama = false;
+      this.isInvalidEmail= false;        
+        },
+      },
+  };
+</script>
+
+<style>
+h1 {
+  color: blue;
+}
+
+.error-message {
+  color: red
+}
+</style>

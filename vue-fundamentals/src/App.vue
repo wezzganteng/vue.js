@@ -1,23 +1,75 @@
-<script setup>
-import {ref} from 'vue'
-
-
-const nama = prompt("masukan nama")
-const umur = prompt("masukan umur")
-const kelas = prompt("masukan kelas")
-const link = "https://www.youtube.com/"
-</script>
 <template>
-  <p>BIODATA DIRI</p> <br>
-<p>NAMA : <span v-html="nama" style="color:red"></span></p> <br>
-<p>UMUR : <span v-html="umur" style="color:red"></span></p> <br>
-<p>KELAS : <span v-html="kelas" style="color:red"></span></p> <br>
-<button> 
-<a v-bind:href="link">youtube </a>
-</button>
-
-<p>{{  }}</p>
-  <div id = "app">
-    <h1>{{ msg }}</h1>
+  <div>
+    <h2>Formulir</h2>
+    <form @submit.prevent="submitForm">
+      <label for="">Nama</label>
+      <input class="{'is-invalid':isInvalidName}" type="text" name="name" v-model="kontak.name">
+      <div v-if="isInvalidName" class="error-message">
+        Nama Harus Di Isi!
+      </div>
+      <br>
+      <label for="">Email</label>
+      <input class="{'is-invalid':isInvalidEmail}" type="email" name="email" v-model="kontak.email">
+      <div v-if="isInvalidEmail" class="error-message">
+        Email Harus Di Isi!
+      </div>
+      <br>
+      <button type="submit">Simpan</button>
+    </form>
+    <div v-if="showResult">
+      nama : {{ name }} <br>
+      email : {{ email }}
+    </div>
   </div>
 </template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  data() {
+    return {
+      kontak: {
+        name: '',
+        email: '',
+      },
+      showResult: ref(false),
+      name: ref(''),
+      email: ref(''),
+
+    };
+  },
+  computed: {
+    isInvalidName() {
+      return this.name.length <= 1;
+    },
+    isInvalidEmail() {
+      return this.email.length <= 1
+    }
+  },
+  methods: {
+    submitForm() {
+      this.name = this.kontak.name;
+      this.email = this.kontak.email;
+      this.showResult = true;
+      this.isInvalidEmail = false;
+      this.isInvalidName = false
+    },
+  },
+};
+</script>
+
+<style>
+h2 {
+  color: blue;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.is-invalid {
+  border-color: red;
+}
+</style>
