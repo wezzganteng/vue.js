@@ -1,0 +1,2 @@
+    <tr v-for="category in getCategory" :key="category" >
+                    <td class="border px-4 py-2"> {{ category}} </td>
