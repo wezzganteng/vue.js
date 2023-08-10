@@ -1,5 +1,5 @@
 <template>
- <h1 class="text-center b" > PRODUK </h1>   <br><br>
+  <h1 class="mb-12 text-center font-sans text-5xl font-bold pt-20">PILIH PRODUK</h1>
 <div class="bg">
 <div class="grid grid-cols-4 gap-10">
 <div class= "w-full max-w-sm  bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-1000 dark:border-gray-700 "  v-for="produk in getProduk" :key="produk.id">

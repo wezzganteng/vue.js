@@ -12,7 +12,7 @@ const users = {
         async fetchUsers({ commit }) {
             try{
                 const data = await axios.get(
-                    "https://fakestoreapi.com/products"
+                    "https://jsonplaceholder.typicode.com/users"
                 );
                 commit("SET_USERS", data.data);
             } catch (error) {

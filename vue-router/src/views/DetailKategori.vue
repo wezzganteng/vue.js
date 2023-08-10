@@ -57,8 +57,8 @@ export default {
  .card {
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
-   margin: 10px;
-   min-width: 200px;
+   margin: 80px;
+   min-width: 300px;
    cursor: pointer;
  }
  
@@ -71,7 +71,7 @@ export default {
  }
 
  .img {
-  width: 100px;
+  width: 300px;
  }
  </style>
 

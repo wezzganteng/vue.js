@@ -5,7 +5,9 @@ import Kai from "../views/Kai.vue"
 import Produk from "../views/Produk.vue"
 import SingleProduk from "../views/SingleProduk.vue"
 import Category from "../views/Category.vue"
-
+import FilterCategory from "../views/FilterCategory.vue"
+import Login from "../views/Login.vue"
+import store from "../store";
 const routes = [
     {
         path: "/",
@@ -38,10 +40,30 @@ const routes = [
         name: "Category",
         component: Category,
     },
+    {
+        path: "/category/:category",
+        name: "FilterCategory",
+        component: FilterCategory,
+    },
+
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+        meta: { requiresGuest: true},
+    },
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+router.beforeEach((to, from, next) => {
+    if(to.meta.requiresGuest && store.getters["auth/isAuthenticated"]) {
+        next("/"); //rediract to home
+    } else {
+        next();
+    }
+})
 export default router;

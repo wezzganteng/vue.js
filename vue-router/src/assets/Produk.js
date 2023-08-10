@@ -2,25 +2,25 @@ export const produk = {
     "produk" : [
         {
             "id" : 1,
-            "nama" :  "laptop",
+            "nama" :  "KULKAS",
             "harga" : "rp.100.1000",
             "id_kategori" : 1,
-            'img' : 'laptop.jpg'
+            'img' : 'kulkas.jpg'
             },
             {
                 "id" : 2,
-            "nama" :  "hp",
+            "nama" :  "MESIN CUCI",
             "harga" : "rp.200.1000",
             "id_kategori" : 1,
-            'img' : 'hp.jpg'
+            'img' : 'cuci.jpg'
             },
 
             {
                 "id" : 3,
-            "nama" :  "monitor",
+            "nama" :  "TV",
             "harga" : "rp.200.1000",
             "id_kategori" : 1,
-            'img' : 'monitor.jpg'
+            'img' : 'tv.jpg'
             },
          
             {

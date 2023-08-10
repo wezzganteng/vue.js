@@ -6,6 +6,7 @@ import users from "./modules/users";
 import kai from "./modules/kai"
 import produk from "./modules/produk"
 import category from "./modules/category"
+import auth from "./modules/auth"
 
 
 const store = createStore ({
@@ -20,6 +21,7 @@ const store = createStore ({
         kai,
         produk,
         category,
+        auth,
     }
 });
 export default store;

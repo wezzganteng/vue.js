@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto sm:px-4">
-        <h1 class="text-center b" > DAFTAR KEREATA</h1>
+        <h1 class="mb-12 text-center font-sans text-5xl font-bold pt-20">PILIH JADWAL BOOKING</h1>
         <table class="table-auto" >
             <thead>
                 <tr>

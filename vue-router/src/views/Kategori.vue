@@ -6,7 +6,7 @@
       <img class="img" :src="getImgSrc(kategori.img)" alt=" ">
      <router-link class="container" :to="{name: 'Detailkategori', params: { id_kategori: kategori.id }}">
     
-         <h4>{{ kategori.nama }}</h4>
+      <center>   <h5>{{ kategori.nama }}</h5> </center>
         
      </router-link>
      </div>

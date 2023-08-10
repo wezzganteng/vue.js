@@ -2,7 +2,7 @@ export const kategori = {
         "kategori" : [
             {
                 "id" : 1 ,
-                "nama" : "elektronik",
+                "nama" : "ELEKTRONIK",
                 'img' : 'elektronik.webp'
                 
                 
@@ -10,25 +10,26 @@ export const kategori = {
             },
             {
                 "id" : 2 ,
-                "nama" : "fahsion",
-                'img' : 'fahsion.jpg'
+                "nama" : "GADGET",
+                'img' : 'gadget2.jpg'
 
-            },
+            },  
             {
                 "id" : 3 ,
-                "nama" : "kendaraan",
-                'img' : 'kendaraaan.jpg'
+                "nama" : "FASHION",
+                'img' : 'fashion.jpg'
+
             },
             {
                 "id" : 4 ,
-                "nama" : "gadget",
-                'img' : 'gadget.jpg'
-
+                "nama" : "GAMES",
+                'img' : 'game2.webp'
             },
+         
             {
                 "id" : 5 ,
-                "nama" : "parabotan",
-                'img' : 'parabotan.jpg'
+                "nama" : "ALAT TULIS",
+                'img' : 'tulis.png'
 
             },
 
